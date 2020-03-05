@@ -7,7 +7,7 @@ import {generateQuery} from "urlifylb";
 let query = generateQuery({
   param1 : 1,
   param2 : "hello",
-  param3 : world
+  param3 : "world"
 })
 
 let text = query.text; //param1=1&param2=hello&param3=world
