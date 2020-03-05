@@ -1,5 +1,7 @@
-# urlify
+# urlifylb
 node package to turn an object into a query string
+
+npm install --save urlifylb
 
 ```javascript
 import {generateQuery} from "urlifylb";
