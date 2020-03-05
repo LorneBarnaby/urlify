@@ -1,25 +1,25 @@
-interface queryString{
+interface QueryString{
     text? : string;
     paramCount? : number;
     original? : object;
 }
 
 
-export const GenerateQuery = function(parameters : object) : queryString {
-    let query : queryString = {}
+export const generateQuery = (parameters : object) : QueryString => {
+    const query : QueryString = {}
     query.original = parameters;
-    let keys = Object.keys(parameters);
+    const keys = Object.keys(parameters);
     query.paramCount = keys.length;
     query.text = '';
-    let values = Object.values(parameters);
 
-    for(let i = 0; i < keys.length; i++){
-        if(i > 0){
-            query.text += "&";
+    const params = Object(parameters);
+    if(keys.length > 0){
+        query.text += `${keys[0]}=${params[keys[0]]}`;
+        keys.shift();
+        for(const param of keys){
+            query.text += `&${param}=${params[param]}`;
         }
-        query.text += `${keys[i]}=${values[i]}`;
     }
-
     return query;
 }
 
