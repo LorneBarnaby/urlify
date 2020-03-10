@@ -16,3 +16,4 @@ let text = query.text; //param1=1&param2=hello&param3=world
 let original = query.original; //{param1 : 1, param2 : "hello", param3 : world}
 let paramCount = query.paramCount; // 3
 ```
+![Node.js CI](https://github.com/LorneBarnaby/urlify/workflows/Node.js%20CI/badge.svg)
